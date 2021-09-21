@@ -5,8 +5,12 @@ body{
     font-family: 'Encode Sans SC', sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 section{
-    height: 80vh;
+    height: 65vh;
     width: 100vw;
 }
 
@@ -22,7 +26,7 @@ h2{
 }
 
 p{
-    width: 60%;
+
     margin: 10px auto;
     font-weight: 70%;
     text-align: center;
@@ -59,7 +63,7 @@ hr {
 /* Navbar styling */
 
 #header{
-    height: 90vh;
+    height: 80vh;
     width: 100%;
     background-image: url(Bannerphoto.jpeg);
     background-repeat: no-repeat;
@@ -73,6 +77,8 @@ hr {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    transition: 1ms ease-in;
 }
 
 .navbar-right h2{
@@ -84,8 +90,23 @@ hr {
     align-self: center;
 }
 
+.navbar-left li:hover {
+    color: #000000;
+
+}
+
 ul li {
     list-style-type: none;
+}
+
+
+.hamburger img {
+    display: none;
+    width: 31px;
+    height: 30px;
+    position: absolute;
+    top: 6%;
+    right: 17%;
 }
 
 li{
@@ -129,11 +150,16 @@ li{
     bottom: 50px;
     left: 49%;
     transition: color 3s ease-out;
+    cursor: pointer;
+    border: none;
+    
 }
 
 .down-arrow:hover{
     color: black;
+    background-color: transparent;
 }
+
 
 /* About Us Styling */ 
 
@@ -164,25 +190,44 @@ li{
 /* Portfolio styling */
 
 .portfolio{
-    width: 99%;
+    width: 100%;
     margin: 0 auto;
+    transition: 100ms ;
+}
+
+img:hover{
+  transform: translateY(30px);
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
     
 }
 
-.gallary {
-    display: flex;
-    margin: 0;
+
+img { 
+    width: 24.8%; 
+    height: 400px;
+    transition: 100ms ;
 }
+
 
 /* Contact btn */
 .inquiry{
+    display: flex;
+    flex-direction: column;
     text-align: center;
     height: 40vh;
     width: 50%;
-    margin: auto;
+    margin: 20px auto -90px;
+
+
 }
 
+
 .inquiry-meth{
+    align-self: center;
     width: 75%;
     margin: 0 auto;
 }
@@ -190,14 +235,14 @@ li{
 .contact-btn {
     color: #000000;
     width: 50%;
-    margin: 5% auto 0;
+    margin: 2% auto 0;
 }
 
 /* Testimonials */
 
 #testimonials{
     height: 60vh;
-    background-image: url(/happy.jpeg);
+    background-image: url(happy.jpeg);
     background-position: bottom;
     color: #ffffff;
     display: flex;
@@ -207,7 +252,7 @@ li{
 .testimony{
     font-size: 2em;
     height: 55vh;
-    margin: 0% auto;
+    margin: auto auto;
 }
 
 .testimony p {
@@ -223,59 +268,520 @@ li{
 .service-type{
     display: grid;
     grid-template-columns: repeat(3, 1fr);    
+    margin-top: 3%;
+    grid-row-gap: 6%;
 }
 
 .cards{
     width: 75%;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .service-type p {
-    font-size: .5em;
+    font-size: 16px;
     
 }
 
 /* Team */
 #team{
     margin-top: 5%;
+    margin-bottom: 10%;
 }
+
 .team-pics{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
     width: 80%;
-    margin: auto auto;
+    margin: 0 auto;
+ 
 }
 
-.team-profile-pic > img{
-    margin: auto auto;
-}
-
-.head-shot{
+img.head-shot{
     border-radius: 40%;
-
-    width: 300px;
+    width: 100%;
     height: 300px;
 }
 
-/* Video download section */
 
+/* Video download section */
 #download{
     height: 50vh;
-    background-image: url(/audiodownload.jpeg);
+    background-image: url(audiodownload.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    text-align: center;
 }
 
-@media screen and (min-width:1000px) and (max-width:1467px){
-    /* Portfolio styling */
+.download{
+    align-self: center;
+    width: 70%;
+    margin: auto 0;
+}
 
-    .portfolio {
+.play-image{
+    width: 10%;
+    margin: 0 auto;
+}
+
+.download img{
+    align-self: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.download-btn{
+    margin-top: 4%;
+}
+/* Blog Styling*/
+
+.blog-post{
+  width: 75%;
+  height: 70vh;
+}
+
+.blog-section{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: -10%
+    ;
+}
+
+.blog-post{
+    margin: 0 20px;
+    text-align: center;
+
+}
+
+.blog-post > p {
+    width: 80%;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 15%;
+}
+
+.blog-post img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 300px;
+}
+
+.blog-post > a{
+    color: #000000;
+    font-size: 16px;
+}
+/* Form Style */
+
+#form{
+    padding-top: 15%;
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form{
+    margin: 0 auto;
+    width: 60%;
+   
+}
+
+input{
+    margin-top: 1%;
+    margin-right: 1%;
+    width: 94%;
+    padding: 2%;
+}
+
+input#message{
+    padding-bottom: 40%;
+    margin-bottom: 5%;
+}
+
+.nameform{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+/* Footer Style */
+
+footer{
+    height: 20vh;
+    margin-top: 10%;
+    background-color: dimgrey;
+    color: #ffffff;
+}
+
+.social-media {
+    display: flex;
+}
+
+.social-media p {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+@media screen and (min-width:1072px) and (max-width:1467px){
+  
+    /* About Us */
+
+    .hamburger img {
+        display: none;
+        width: 31px;
+        height: 30px;
+        position: absolute;
+        top: 6%;
+        right: 17%;
+    }
+
+    .about-text > p {
+        font-size: 14px;
+        line-height: 20px;
+        width: 90%;
+        text-align: left;
+        margin-right: 5%;
+        margin-top: 10%;
+    }
+
+
+    .about-info {
+        width: 84%;
+        display: flex;
+        margin: 6% auto;
+    }
+
+    .about-us-image > img {
+        width: 485px;
+        margin-left: 4%;
+    }
+   
+
+    .testimony p {
+        width: 75%;
+        font-size: .5em;
+    }
+
+    .service-type p {
+        font-size: 12px;
+    }
+
+    /* Portfolio Section */
+    .gallery{
+        gap: 10px;
+    }
+
+   
+    div.portfolio {
         width: 90%;
     }
 
-    img{ 
-        width: 24.7%; 
-        height: 500px;
+
+    img {
+        width: 100%;
+        height: 350px;
+    }
+    /* Blog section */
+    .blog-post > p {
+        width: 100%;
+        font-size: 12px;
+        line-height: 150%;
+        margin-bottom: 15%;
+    }
+#form{
+    padding-top: ;
+}
+
+}
+
+@media screen and (min-width: 769px) and (max-width:1071px) {
+    /* Banner styles */
+
+    .hamburger img {
+        display: none;
+        width: 31px;
+        height: 30px;
+        position: absolute;
+        top: 6%;
+        right: 17%;
+    }
+
+    a.down-arrow {
+        font-size: 5vh;
+        position: absolute;
+        bottom: 20px;
+        left: 49%;
+        transition: color 3s ease-out;
+        cursor: pointer;
+       
+    }
+
+    .banner-links {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .about-text > p {
+        font-size: 14px;
+        line-height: 20px;
+        width: 90%;
+        text-align: left;
+        margin-right: 10%;
+       
+    }
+
+    .about-us-image > img {
+        width: 410px;
+        margin-top: 15%;
+    }
+
+    .gallery{
+        display: block;
+    }
+
+    img {
+        width: 24.6%;
+        height: 350px;
+    }
+
+    .testimony p {
+        width: 75%;
+        font-size: .5em;
+    }
+
+    .service-type p {
+        font-size: 12px;
+    }
+
+     /* Blog section */
+     .blog-post > p {
+        width: 100%;
+        font-size: 12px;
+        line-height: 150%;
+        margin-bottom: 15%;
+    }
+
+    #form{
+        margin-top: 15%;
+    }
+
+}
+
+@media screen and (min-width: 501px) and (max-width: 809px) {
+    /* banner styles */
+
+    ul.navbar-left{
+        display: none;
+      }
+
+    .hamburger img {
+        display: block ;
+        width: 31px;
+        height: 30px;
+        position: absolute;
+        top: 6%;
+        right: 17%;
+    }
+    
+    h1{
+        font-size: 36px;
+    }
+  
+    .banner-links {
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    .about-info {
+        width: 92%;
+        display: flex;
+        margin: 6% auto;
+    }
+
+    .about-us-image > img {
+        width: 350px;
+        margin-top: 15%;
+    }
+
+    .about-text > p {
+        font-size: 11px;
+        line-height: 20px;
+        width: 90%;
+        text-align: left;
+        margin-right: 11%;
+    }
+
+    .gallery{
+        display: block;
+        width: 75%;
+        margin: 0 auto;
+        gap: 10px;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 95%;
+        height: 400px;
+    }
+
+    .service-type p {
+        font-size: 11px;
+    }
+
+    .inquiry {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 55vh;
+        width: 50%;
+        margin: 20px auto -90px;
+    }
+
+    .blog-section {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        width: 99%;
+        margin: 0 auto;
+        margin-bottom: 20%;
+    }
+    
+    .blog-post > p {
+        width: 100%;
+        font-size: 11px;
+        line-height: 150%;
+        margin-bottom: 15%;
+    }
+  
+}
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    #header{
+        height: 80vh;
+    }
+
+    ul.navbar-left{
+        display: none;
+      }
+
+    .hamburger img {
+        display: block ;
+        width: 31px;
+        height: 30px;
+        position: absolute;
+        top: 6%;
+        right: 17%;
+    }
+    
+    h1{
+        font-size: 36px;
+    }
+  
+    .banner-links {
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    .about-info {
+        width: 92%;
+        display: block;
+        margin: 6% auto;
+    }
+
+    .about-us-image > img {
+        width: 350px;
+        margin-top: 15%;
+        position: relative;
+        left: 35%;
+    }
+    .about-text {
+        font-size: 13px;
+        width: 90%;
+        margin: 0 auto;
     }
 
 
+    .gallery{
+        display: block;
+    }
+
+    img {
+        width: 24.4%;
+        height: 300px;
+    }
+
+    .service-type p {
+        font-size: 11px;
+    }
+
+    img.head-shot {
+        border-radius: 40%;
+        width: 100%;
+        height: 230px;
+    }
+    
+    .inquiry {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 55vh;
+        width: 50%;
+        margin: 20px auto -90px;
+    }
+
+    .download img {
+        align-self: center;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        position: relative;
+        right: 33px;
+    }
+
+    .blog-section {
+        display: block;
+        align-self: center;
+        width: 85%;
+        margin: 0 auto;
+    }
+    
+    .blog-post {
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    
+    .blog-post > p {
+        visibility: hidden;
+        display: none;
+        width: 100%;
+        font-size: 11px;
+        line-height: 150%;
+     
+    }
+    
 }
+
+@media screen and (max-height: 500px){
+    .down-arrow{
+      
+       display: none;
+    }
+
+    #form{
+        padding-top: 30%;
+    }
+};
